@@ -1,4 +1,4 @@
-let F: number = 0;
+/*let F: number = 0;
 let F0: number = 0;
 let F1: number = 0;
 let tong: number = 0;
@@ -18,4 +18,18 @@ for (let i = 0; i < 10; i++) {
     }
 }
 console.log(fibonacci);
-console.log(tong);
+console.log(tong);*/
+
+function sumFibonacci(num: number): number {
+    if (num === 1 || num === 2) {
+        return 1;
+    }
+    return sumFibonacci(num - 1) + sumFibonacci(num - 2);
+}
+
+let num:number = 10;
+let sumFibo: number = 0;
+for (let i = 0; i < num; i++) {
+    sumFibo +=sumFibonacci(i+1);
+}
+console.log(sumFibo);
