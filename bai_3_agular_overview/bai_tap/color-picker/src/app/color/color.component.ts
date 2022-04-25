@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./color.component.css']
 })
 export class ColorComponent implements OnInit {
-
+  color = ``;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  red() {
+    this.color = 'pink';
+  }
+
+  yellow() {
+    this.color = 'yellow';
+  }
+
+  blue() {
+    this.color = 'mediumpurple';
+  }
 }

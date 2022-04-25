@@ -1,0 +1,10 @@
+<p>Number 1</p>
+<input type="number" [(ngModel)]="number1">
+<p>Number 2</p>
+<input type="number" [(ngModel)]="number2">
+<p>Caculator</p>
+<input type="button" value="Add(+)" (click)="add()">
+<input type="button" value="Sub(-)" (click)="sub()">
+<input type="button" value="Div(/)" (click)="div()">
+<input type="button" value="Multi(*)" (click)="multi()">
+<p>Result :  {{result}}</p>

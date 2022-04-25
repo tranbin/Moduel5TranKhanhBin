@@ -1,1 +1,9 @@
-<p>color works!</p>
+<h1>Color Picker</h1>
+<!--<h3>Enter code color: <input type="text" [(ngModel)]="color"></h3>-->
+<h3>Pick color: <button style="background-color: pink" (click)="red()">Pink </button>
+  <button style="background-color: yellow" (click)="yellow()">Yellow </button>
+  <button style="background-color: mediumpurple" (click)="blue()">Purple</button>
+</h3>
+<h3>Display color</h3>
+<div style="width: 200px;height: 300px"[style.background-color]="color"></div>
+
