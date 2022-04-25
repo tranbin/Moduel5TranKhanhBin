@@ -12,7 +12,7 @@ export class ColorComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  red() {
+  pink() {
     this.color = 'pink';
   }
 
@@ -20,7 +20,7 @@ export class ColorComponent implements OnInit {
     this.color = 'yellow';
   }
 
-  blue() {
+  mediumpurple() {
     this.color = 'mediumpurple';
   }
 }
