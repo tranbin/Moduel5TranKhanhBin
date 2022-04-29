@@ -11,8 +11,6 @@ export class StudentDetailComponent implements OnInit {
   student: IStudent | undefined;
 
   @Output("newStudent") onCreate = new EventEmitter<IStudent>();
-/*
-  @Output('editStudent') onUpdate = new EventEmitter<IStudent>()*/
 
   constructor() {
   }
@@ -20,9 +18,6 @@ export class StudentDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
- /* edit() {
-
-  }*/
 
   createStudent(id : string ,name: string, age: string, mark: string, avatar :string) {
     this.student = {id : parseInt(id),name : name, age:parseInt(age) , mark : parseInt(mark),avatar : avatar}
@@ -31,9 +26,5 @@ export class StudentDetailComponent implements OnInit {
     this.onCreate.emit(this.student);
   }
 
- /* editStudent(id : string ,name: string, age: string, mark: string, avatar :string) {
-    this.student = {id : parseInt(id),name : name, age:parseInt(age) , mark : parseInt(mark),avatar : avatar}
 
-    this.onUpdate.
-  }*/
 }
