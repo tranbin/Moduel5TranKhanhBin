@@ -1,0 +1,32 @@
+<h1>List Student</h1>
+<table class="table table-hover table-striped">
+  <thead>
+  <tr>
+    <th>No</th>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Mark</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let student of students ; index as i">
+    <td>{{i+1}}</td>
+    <td>{{student.id}}</td>
+    <td>{{student.name | titlecase}}</td>
+    <td>{{student.age}}</td>
+    <td>{{student.mark}}</td>
+    <td class="text-black" *ngIf="student.mark <8 && student.mark>=5">Nomarl</td>
+    <td class="text-success" *ngIf="student.mark >=8">Good</td>
+    <td class="text-danger" *ngIf="student.mark <5">Bad</td>
+    <td>
+      <a class="btn btn-info m-2" (click)="getStudentDetail(student)">Detail</a>
+      <a class="btn btn-warning m-2"(click)="getStudentDetail(student)">Edit</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<app-student-detail [student]="studentDetail" (newStudent)="getNewStudent($event)"></app-student-detail>
+

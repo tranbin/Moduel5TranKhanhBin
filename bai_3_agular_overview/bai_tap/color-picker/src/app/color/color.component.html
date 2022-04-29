@@ -1,10 +1,10 @@
-
-<div style="width: 100%;height: 100%"[style.background-color]="color">
-  <h1>Color Picker</h1>
-  <!--<h3>Enter code color: <input type="text" [(ngModel)]="color"></h3>-->
-  <h3>Pick color: <button style="background-color: pink" (click)="pink()">Pink </button>
-    <button style="background-color: yellow" (click)="yellow()">Yellow </button>
-    <button style="background-color: mediumpurple" (click)="mediumpurple()">Mediumpurple</button>
-  </h3>
+<h1>Color Picker</h1>
+<!--<h3>Enter code color: <input type="text" [(ngModel)]="color"></h3>-->
+<h3>Pick color:
+  <button style="background-color: pink" (click)="pink()">Pink</button>
+  <button style="background-color: yellow" (click)="yellow()">Yellow</button>
+  <button style="background-color: mediumpurple" (click)="mediumpurple()">Mediumpurple</button>
+</h3>
+<div style="width: 100px;height: 100px" [style.background-color]="color">
 </div>
 
