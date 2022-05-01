@@ -1,7 +1,5 @@
-<h1>Rating Bar</h1>
-
-<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+<div class="btn-group" role="group" aria-label="Basic example">
   <div *ngFor="let rate of rating" class="btn-group" role="group" aria-label="First group">
-    <button (click)="sendData(rate.value)" [ngStyle]="{'background-color': rate.active ? 'pink': 'white'}" type="button" class="btn btn-outline-secondary">{{rate.value}}</button>
+  <button (click)="sendData(rate.value)" [ngStyle]="{'background-color': rate.active ? 'pink': 'white'}" style="color: black" stype="button" class="btn btn-primary">{{rate.value}}</button>
   </div>
 </div>
