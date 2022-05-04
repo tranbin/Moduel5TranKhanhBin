@@ -1,0 +1,41 @@
+<h1>List IRegister</h1>
+<table class="table table-hover table-striped">
+  <thead>
+  <tr>
+    <th>No</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>ConfirmPassword</th>
+    <th>Country</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Phone</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let register of registers ; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{register.email}}</td>
+    <td>{{register.password}}</td>
+    <td>{{register.confirmPassword}}</td>
+    <td>{{register.country}}</td>
+    <td>{{register.age}}</td>
+    <td>{{register.gender}}</td>
+    <td>{{register.phone}}</td>
+    <td>
+      <a class="btn btn-info m-2">Detail</a>
+      <a class="btn btn-warning m-2">Edit</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <app-register-component></app-register-component>
+    </div>
+    <div class="col-6">
+      <h1>Edit</h1>
+    </div>
+  </div>
+</div>
