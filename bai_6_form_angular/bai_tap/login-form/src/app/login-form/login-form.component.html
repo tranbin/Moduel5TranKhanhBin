@@ -1,0 +1,19 @@
+<h1>Login Form</h1>
+<form [formGroup]="formLogin" (ngSubmit)="createLogin()">
+  <div class="form-group">
+    <label>Email <i class="text-danger">(*)</i></label>
+    <input type="text" class="form-control" formControlName="email">
+    <div class="text-danger"
+         *ngIf="formLogin.get('email')?.invalid && formLogin.get('email')?.touched">Email invalid
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Password <i class="text-danger">(*)</i></label>
+    <input type="password" class="form-control" formControlName="password">
+    <div class="text-danger"
+         *ngIf="formLogin.get('password')?.invalid && formLogin.get('password')?.touched">Password invalid
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="formLogin.invalid">Login</button>
+  <button type="reset" class="btn btn-primary">Reset</button>
+</form>

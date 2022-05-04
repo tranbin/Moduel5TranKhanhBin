@@ -2,8 +2,8 @@ import {IRegister} from "../models/IRegister";
 
 export class RegisterDAO {
   static registerDao: IRegister[] = [{
-    email: "trankhanhbin123@gmail.com",
-    password: "123456",
+      email: "trankhanhbin123@gmail.com",
+      password: "123456",
     confirmPassword: "123456",
     country: "Huế",
     age: 18,
