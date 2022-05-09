@@ -10,7 +10,7 @@
 <input type="number" placeholder="Mark Student" class="form-control" value="{{student.mark}}">
 <p>Avatar Student:</p>
 <input type="number" placeholder="Avatar Student" class="form-control" value="{{student.avatar}}">
-<button type="submit" class="btn-light">Edit</button>
+<button type="submit" class="btn btn-primary m-2">Edit</button>
 <!--<div class="col-2" (click)="editStudent(id.value,name.value,age.value,mark.value,avatar.value)">
   <label>Change Mark : </label>
   <input class="form-control" type="number" min = "0" max = "10" [(ngModel)]="student.mark">
@@ -22,4 +22,4 @@
 <p>Age Student : <input type="text" #age></p>
 <p>Mark Student : <input type="text" #mark></p>
 <p>Avatar Student : <input type="text" #avatar></p>
-<button type="submit" (click)="createStudent(id.value,name.value,age.value,mark.value,avatar.value)" class="btn-light">Create</button>
+<button type="submit" class="btn btn-primary m-2" (click)="createStudent(id.value,name.value,age.value,mark.value,avatar.value)">Create</button>

@@ -26,7 +26,7 @@ export class RegisterComponentComponent implements OnInit {
         country: new FormControl('',[Validators.required]),
         age: new FormControl('',[Validators.required,Validators.min(18)]),
         gender: new FormControl('',[Validators.required]),
-        phone: new FormControl('',[Validators.required,Validators.pattern(" /^\\+84\\d{9,10}$/")])
+        phone: new FormControl('',[Validators.required,Validators.pattern("^\\+84\\d{9,10}$")])
       }
     )
   }
@@ -55,4 +55,3 @@ function comparePassword(c: AbstractControl) {
   const v = c.value;
   return (v.password === v.confirmPassword) ? null : {passwordnotmatch: true};
 }
-

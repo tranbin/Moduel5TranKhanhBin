@@ -6,11 +6,15 @@ import { RegisterComponentComponent } from './register-component/register-compon
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RegisterListComponent } from './register-list/register-list.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponentComponent,
-    RegisterListComponent
+    RegisterListComponent,
+
+
   ],
     imports: [
         BrowserModule,

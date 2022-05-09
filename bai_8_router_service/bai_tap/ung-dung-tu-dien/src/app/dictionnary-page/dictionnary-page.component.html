@@ -1,0 +1,22 @@
+<h1>List Student</h1>
+<table class="table table-hover table-striped">
+  <thead>
+  <tr>
+    <th>No</th>
+    <th>Id</th>
+    <th>Word</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let temp of words ; index as i">
+    <td>{{i+1}}</td>
+    <td>{{temp.id}}</td>
+    <td>{{temp.wordE | titlecase}}</td>
+    <td>
+      <a class="btn btn-info m-2" [routerLink]="['/detail',temp.id]">Detail</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+

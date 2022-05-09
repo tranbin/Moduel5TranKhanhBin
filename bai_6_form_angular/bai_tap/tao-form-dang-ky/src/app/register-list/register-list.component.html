@@ -16,15 +16,15 @@
   <tr *ngFor="let register of registers ; index as i">
     <td>{{i + 1}}</td>
     <td>{{register.email}}</td>
-    <td>{{register.password}}</td>
-    <td>{{register.confirmPassword}}</td>
+    <td>{{register.pwGroup.password}}</td>
+    <td>{{register.pwGroup.confirmPassword}}</td>
     <td>{{register.country}}</td>
     <td>{{register.age}}</td>
     <td>{{register.gender}}</td>
     <td>{{register.phone}}</td>
     <td>
-      <a class="btn btn-info m-2">Detail</a>
-      <a class="btn btn-warning m-2">Edit</a>
+      <a class="btn btn-info m-2" (click)="getRegister(register)">Detail</a>
+      <a class="btn btn-warning m-2" (click)="updateRegister(register)">Edit</a>
     </td>
   </tr>
   </tbody>
@@ -35,7 +35,7 @@
       <app-register-component></app-register-component>
     </div>
     <div class="col-6">
-      <h1>Edit</h1>
+      <!--<app-register-component [update]="registerList"></app-register-component>-->
     </div>
   </div>
 </div>

@@ -17,4 +17,11 @@ export class RegisterListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getRegister(register: IRegister) {
+    this.registerList = register;
+  }
+
+  updateRegister(register: IRegister) {
+    this.registerList = register;
+  }
 }
