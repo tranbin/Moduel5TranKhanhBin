@@ -9,13 +9,16 @@ import {IProduct} from "../../../models/IProduct";
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: IProduct[] = ProductDAO.productDAO;
+  products: IProduct[] = [];
 
-  constructor() {
+  constructor(private productService: ProductService) {
   }
 
   ngOnInit(): void {
-    ;
+    this.getAll();
   }
 
+  getAll() {
+    this.products = this.productService.getAll();
+  }
 }

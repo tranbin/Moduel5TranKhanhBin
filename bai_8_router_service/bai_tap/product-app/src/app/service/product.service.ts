@@ -35,6 +35,9 @@ export class ProductService {
 
   constructor() {
   }
+  getAll(){
+    return this.products;
+  }
 
   save(product: IProduct) {
     ProductDAO.productDAO.push(product);
@@ -50,5 +53,10 @@ export class ProductService {
         this.products[i] = product;
       }
     }
+  }
+  delete(id :number){
+    this.products =this.products.filter(product =>{
+      return product.id !== id;
+    })
   }
 }

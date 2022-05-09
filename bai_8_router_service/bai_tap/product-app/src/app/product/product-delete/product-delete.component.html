@@ -1,5 +1,5 @@
-<h1>Update Product</h1>
-<form [formGroup]="formUpdate" (ngSubmit)="updateProduct(id)">
+<h1>Delete Product</h1>
+<form [formGroup]="formDelete" (ngSubmit)="deleteProduct(id)">
   <div class="form-group">
     <label>Id <i class="text-danger">(*)</i></label>
     <input type="number" class="form-control" formControlName="id">
@@ -17,6 +17,7 @@
     <input type="text" class="form-control" formControlName="description">
   </div>
   <div class="form-group">
-    <button class="btn btn-primary" type="submit">Update Product</button>
+    <button class="btn btn-primary" type="submit">Delete Product</button>
   </div>
 </form>
+
