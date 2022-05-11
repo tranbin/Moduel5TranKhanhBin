@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {IStudent} from "../model/IStudent";
-import {StudentDAO} from "../dao/StudentDAO";
 import {StudentService} from "../student.service";
 import {Router} from "@angular/router";
 
@@ -10,14 +9,27 @@ import {Router} from "@angular/router";
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
-  students: IStudent[] = StudentDAO.studentDao;
+  students: IStudent[];
   studentDetail: IStudent | undefined;
 
 
-  constructor() {
+  constructor(private studentService: StudentService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
+    this.studentService.getAllStudent().subscribe((value) => {
+        this.students = value;
+      }
+      , () => {
+      },
+      () => {
+      })
   }
 
+  deleteStudent(id: number) {
+    this.studentService.deleteById(id).subscribe();
+    this.ngOnInit();
+
+  }
 }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "demo-student-list": {
+    "ung-dung-todo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/demo-student-list",
+            "outputPath": "dist/ung-dung-todo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "demo-student-list:build"
+            "browserTarget": "ung-dung-todo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "demo-student-list:build:production"
+              "browserTarget": "ung-dung-todo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "demo-student-list:build"
+            "browserTarget": "ung-dung-todo:build"
           }
         },
         "test": {
@@ -110,19 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "demo-student-list:serve"
+            "devServerTarget": "ung-dung-todo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "demo-student-list:serve:production"
+              "devServerTarget": "ung-dung-todo:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "demo-student-list",
+  "defaultProject": "ung-dung-todo",
   "cli": {
-    "analytics": "a4a7c4dc-e6b9-4b1d-b733-9a64e7a2cce4"
+    "analytics": "f33b937d-a184-4898-bd50-c9a29d654041"
   }
 }

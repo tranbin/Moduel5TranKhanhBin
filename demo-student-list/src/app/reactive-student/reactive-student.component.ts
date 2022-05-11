@@ -11,13 +11,12 @@ import {Router} from "@angular/router";
 export class ReactiveStudentComponent implements OnInit {
   formCreateStudent: FormGroup;
 
-  constructor(private studentService : StudentService,
-              private router : Router) {
+  constructor(private studentService: StudentService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
     this.formCreateStudent = new FormGroup({
-      id: new FormControl('', [Validators.required, Validators.maxLength(50)]),
       name: new FormControl('', [Validators.required, Validators.maxLength(50)]),
       age: new FormControl('', [Validators.required, Validators.min(10)]),
       gender: new FormControl('', [Validators.required]),
@@ -26,9 +25,15 @@ export class ReactiveStudentComponent implements OnInit {
       avatar: new FormControl('')
     })
   }
-  createStudent(){
-    this.studentService.addNewStudent(this.formCreateStudent.value);
-    this.router.navigateByUrl("");
+
+  createStudent() {
+    this.studentService.addNewStudent(this.formCreateStudent.value).subscribe(() => {
+      },
+      () => {
+      },
+      () => {
+        this.router.navigateByUrl("");
+      });
   }
 
 }

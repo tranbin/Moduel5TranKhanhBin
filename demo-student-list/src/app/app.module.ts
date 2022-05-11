@@ -9,6 +9,7 @@ import { ReactiveStudentComponent } from './reactive-student/reactive-student.co
 import {ReactiveFormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import { EditStudentComponent } from './edit-student/edit-student.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,13 +17,14 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
     StudentDetailComponent,
     StudentListComponent,
     ReactiveStudentComponent,
-    EditStudentComponent
+    EditStudentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

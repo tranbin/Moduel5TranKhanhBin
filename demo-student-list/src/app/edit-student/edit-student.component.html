@@ -1,1 +1,44 @@
-<p>edit-student works!</p>
+<h1>Create Student</h1>
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" formControlName="name">
+    <div class="text-danger" *ngIf="editForm.get('name')?.invalid && editForm.get('name')?.untouched">
+      Name invalid
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Age</label>
+    <input type="number" class="form-control" formControlName="age">
+    <div class="text-danger" *ngIf="editForm.get('age')?.invalid && editForm.get('age')?.untouched">
+      Age invalid
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Gender</label>
+    <input class="form-check-input" type="radio" value="Male" formControlName="gender" name="gender">Male
+    <input class="form-check-input" type="radio" value="Female" formControlName="gender" name="gender">Female
+    <div class="text-danger"
+         *ngIf="editForm.get('gender')?.invalid && editForm.get('gender')?.touched">Gender invalid
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Phone</label>
+    <input type="text" class="form-control" formControlName="phone">
+    <div class="text-danger"
+         *ngIf="editForm.get('phone')?.invalid && editForm.get('phone')?.untouched">
+      Phone invalid
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Mark <i class="text-danger">(*)</i></label>
+    <input type="text" class="form-control" formControlName="mark">
+    <div class="text-danger" *ngIf="editForm.get('mark')?.invalid && editForm.get('mark')?.untouched">
+      Mark invalid
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit" value="Create" [disabled]="editForm.invalid">Update</button>
+  </div>
+
+</form>

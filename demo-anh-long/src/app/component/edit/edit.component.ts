@@ -12,8 +12,10 @@ import {SinhVienModel} from '../models/sinhVienModel';
 export class EditComponent implements OnInit {
   editForm: FormGroup;
   sinhVien: SinhVienModel;
-  constructor(private fb: FormBuilder, private service: ComponentService,
-              private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private fb: FormBuilder,
+              private service: ComponentService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {

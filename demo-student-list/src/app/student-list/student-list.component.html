@@ -16,7 +16,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let student of students ; index as i">
-    <td>{{i+1}}</td>
+    <td>{{i + 1}}</td>
     <td>{{student.id}}</td>
     <td>{{student.name | titlecase}}</td>
     <td>{{student.age}}</td>
@@ -29,7 +29,8 @@
     <td class="text-danger" *ngIf="student.mark <5">Bad</td>
     <td>
       <a class="btn btn-info m-2" [routerLink]="['/detail',student.id]">Detail</a>
-      <a class="btn btn-warning m-2" [routerLink]="['/edit',student.id]">Edit</a>
+      <a class="btn btn-warning m-2" [routerLink]="['/edit/',student.id]">Edit</a>
+      <a class="btn btn-danger m-2" (click)="deleteStudent(student.id)">Delete</a>
     </td>
   </tr>
   </tbody>
