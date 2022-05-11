@@ -9,7 +9,7 @@ import {ActivatedRoute, ParamMap, Router} from "@angular/router";
   styleUrls: ['./product-delete.component.css']
 })
 export class ProductDeleteComponent implements OnInit {
-  formDelete : FormGroup;
+  productForm : FormGroup;
   id : number;
   constructor(private productService:ProductService,
               private activatedRoute : ActivatedRoute,
@@ -18,7 +18,7 @@ export class ProductDeleteComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((paramMap): ParamMap =>{
       this.id = +paramMap.get('id');
       const product=this.getProduct(this.id);
-      this.formDelete=new FormGroup({
+      this.productForm=new FormGroup({
         id: new FormControl(product.id),
         name: new FormControl(product.name),
         price: new FormControl(product.price),
@@ -30,8 +30,8 @@ export class ProductDeleteComponent implements OnInit {
     return this.productService.findById(id);
   }
   deleteProduct(id: number) {
-    this.productService.delete(id);
-    this.router.navigate(['/delete/product']);
+    this.productService.deleteProduct(id);
+    this.router.navigate(['product/list']);
   }
 
   ngOnInit(): void {

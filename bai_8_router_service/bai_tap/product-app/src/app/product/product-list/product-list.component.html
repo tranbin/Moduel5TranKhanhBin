@@ -18,9 +18,8 @@
     <td>{{temp.price}}</td>
     <td>{{temp.description}}</td>
     <td>
-      <a class="btn btn-primary">Detail</a>
-      <a class="btn btn-danger" [routerLink]="['/update',temp.id]">Edit</a>
-      <a class="btn btn-info"[routerLink]="['/delete',temp.id]">Delete</a>
+      <a class="btn btn-danger" [routerLink]="['/product/edit',temp.id]">Edit</a>
+      <a class="btn btn-info"[routerLink]="['/product/delete',temp.id]">Delete</a>
     </td>
   </tr>
   </tbody>

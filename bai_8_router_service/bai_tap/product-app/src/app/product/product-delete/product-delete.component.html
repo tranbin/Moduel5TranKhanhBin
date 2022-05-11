@@ -1,5 +1,5 @@
 <h1>Delete Product</h1>
-<form [formGroup]="formDelete" (ngSubmit)="deleteProduct(id)">
+<form [formGroup]="productForm" (ngSubmit)="deleteProduct(id)">
   <div class="form-group">
     <label>Id <i class="text-danger">(*)</i></label>
     <input type="number" class="form-control" formControlName="id">

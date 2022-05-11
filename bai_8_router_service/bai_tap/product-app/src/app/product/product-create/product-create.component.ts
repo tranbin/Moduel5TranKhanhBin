@@ -9,14 +9,14 @@ import {Router} from "@angular/router";
   styleUrls: ['./product-create.component.css']
 })
 export class ProductCreateComponent implements OnInit {
-  formCreate: FormGroup;
+  productForm: FormGroup;
 
   constructor(private productService: ProductService,
               private router: Router) {
   }
 
   ngOnInit(): void {
-    this.formCreate = new FormGroup({
+    this.productForm = new FormGroup({
       id: new FormControl(),
       name: new FormControl(),
       price: new FormControl(),
@@ -25,8 +25,10 @@ export class ProductCreateComponent implements OnInit {
   }
 
   createProduct() {
-    this.productService.save(this.formCreate.value);
-    this.router.navigateByUrl("");
+    const product = this.productForm.value;
+    this.productService.saveProduct(product);
+    this.router.navigate(['product/list']);
+   /* this.productForm.reset();*/
   }
 
 }

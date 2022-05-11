@@ -10,7 +10,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit {
-  formUpdate: FormGroup;
+  productForm: FormGroup;
   id: number;
   product: IProduct;
 
@@ -23,7 +23,7 @@ export class ProductEditComponent implements OnInit {
     });
 
     const product = this.getProduct(this.id);
-    this.formUpdate = new FormGroup({
+    this.productForm = new FormGroup({
       id: new FormControl(product.id),
       name: new FormControl(product.name),
       price: new FormControl(product.price),
@@ -39,7 +39,7 @@ export class ProductEditComponent implements OnInit {
   }
 
   updateProduct(id: number) {
-    this.productService.updateProduct(id, this.formUpdate.value);
-    this.router.navigateByUrl('/update');
+    this.productService.updateProduct(id, this.productForm.value);
+    this.router.navigateByUrl('/product/list');
   }
 }

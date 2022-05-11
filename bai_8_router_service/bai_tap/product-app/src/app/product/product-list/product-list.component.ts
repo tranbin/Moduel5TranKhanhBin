@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from "../../service/product.service";
-import {ProductDAO} from "../../../dao/ProductDAO";
 import {IProduct} from "../../../models/IProduct";
 
 @Component({
@@ -14,7 +13,7 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() :void {
     this.getAll();
   }
 

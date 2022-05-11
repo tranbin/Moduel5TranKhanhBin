@@ -1,5 +1,5 @@
 <h1>Create Product</h1>
-<form [formGroup]="formCreate" (ngSubmit)="createProduct()">
+<form [formGroup]="productForm" (ngSubmit)="createProduct()">
   <div class="form-group">
     <label>Id <i class="text-danger">(*)</i></label>
     <input type="number" class="form-control" formControlName="id">
