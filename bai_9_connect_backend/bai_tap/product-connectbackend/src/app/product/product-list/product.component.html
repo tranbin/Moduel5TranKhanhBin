@@ -1,0 +1,29 @@
+<h1 style="text-align: center;color: hotpink">List Product</h1>
+<table class="table table-striped table-hover">
+  <thead>
+  <tr>
+    <th>No</th>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let temp of products;index as i">
+        <td>{{i + 1}}</td>
+        <td>{{temp.id}}</td>
+        <td>{{temp.name}}</td>
+        <td>{{temp.price}}</td>
+        <td>{{temp.category}}</td>
+        <td>{{temp.description}}</td>
+        <td>
+          <a class="btn btn-warning" [routerLink]="['product/update',temp.id]">Update</a>
+          <a class="btn btn-danger" (click)="delete(temp.id)">Delete</a>
+          <a class="btn btn-light">Detail</a>
+        </td>
+    </tr>
+  </tbody>
+</table>

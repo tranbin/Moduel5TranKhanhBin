@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IStudent} from '../model/IStudent';
 import {StudentService} from "../student.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -20,8 +20,8 @@ export class EditStudentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.activatedRouter.paramMap.subscribe((param) => {
-      const id = Number(param.get('id'));
+    this.activatedRouter.paramMap.subscribe((paramMap:ParamMap) => {
+      const id = Number(paramMap.get('id'));
       this.studentService.findStudentById(id).subscribe(next => {
         this.student = next;
         this.editForm.patchValue({
@@ -36,6 +36,7 @@ export class EditStudentComponent implements OnInit {
       });
     });
     this.editForm = this.formBuilder.group({
+      id : new FormControl(''),
       name: new FormControl('', [Validators.required, Validators.maxLength(50)]),
       age: new FormControl('', [Validators.required, Validators.min(10)]),
       gender: new FormControl('', [Validators.required]),

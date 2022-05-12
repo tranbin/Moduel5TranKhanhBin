@@ -31,7 +31,9 @@ export class StudentService {
 
   }
 
-  updateStudent(student: IStudent): Observable<void> {
-    return this.httpClient.patch<void>(this.URL_API + "/" + student.id, student);
+  updateStudent(student1: IStudent): Observable<void> {
+    console.log(student1);
+    return this.httpClient.patch<void>(this.URL_API + "/" + student1.id,student1);
   }
+
 }

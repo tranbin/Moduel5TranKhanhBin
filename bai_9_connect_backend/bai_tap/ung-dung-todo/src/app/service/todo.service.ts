@@ -7,7 +7,7 @@ import {ITodo} from "../../model/ITodo";
   providedIn: 'root'
 })
 export class TodoService {
-  readonly URL_API = "http://localhost:3000/todos";
+  URL_API = "http://localhost:3000/todos";
 
   constructor(private httpClient: HttpClient) {
   }
@@ -23,10 +23,12 @@ export class TodoService {
   delete(id: number): Observable<ITodo> {
     return this.httpClient.delete(this.URL_API + "/" + id);
   }
-  findById(id : number):Observable<ITodo>{
+
+  findById(id: number): Observable<ITodo> {
     return this.httpClient.get(this.URL_API + "/" + id);
   }
-  editTodo(id: number, todo: ITodo): Observable<ITodo> {
-    return this.httpClient.put(this.URL_API + "/" + id);
+
+  updateTodo(id: number, todo: ITodo): Observable<ITodo> {
+    return this.httpClient.put(this.URL_API + "/" + todo.id, todo);
   }
 }

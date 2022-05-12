@@ -1,22 +1,13 @@
 {
   "students": [
     {
-      "name": "Bin",
+      "name": "bIN",
       "age": 20,
-      "gender": "Male",
+      "gender": "Female",
       "phone": "+84111111111",
       "mark": "20",
       "avatar": "",
       "id": 1
-    },
-    {
-      "name": "Bin2",
-      "age": 22,
-      "gender": "Male",
-      "phone": "+842222222222",
-      "mark": "22",
-      "avatar": "",
-      "id": 2
     }
   ]
 }
