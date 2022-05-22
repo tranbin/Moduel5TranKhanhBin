@@ -16,7 +16,7 @@
     <label>Category</label>
     <select formControlName="category">
       <option selected [value]="null" disabled>Choose type category</option>
-      <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+      <option *ngFor="let category of categories" [value]="category.name">{{category.name}}</option>
     </select>
   </div>
   <div class="form-group">

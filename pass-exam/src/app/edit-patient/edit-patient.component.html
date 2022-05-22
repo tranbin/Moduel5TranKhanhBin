@@ -1,0 +1,57 @@
+<h1>Edit Product</h1>
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Id Product</label>
+    <input type="text" class="form-control" formControlName="idProduct" disabled>
+  </div>
+  <div class="form-group">
+    <label>Id Patient</label>
+    <input type="text" class="form-control" formControlName="idPatient" disabled>
+  </div>
+  <div class="form-group">
+    <label>Name Patient</label>
+    <input type="text" class="form-control" formControlName="namePatient">
+    <div class="text-danger" *ngIf="editForm.get('namePatient')?.invalid && editForm.get('namePatient')?.untouched">
+      Name Patient invalid
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Date Go</label>
+    <input type="date" class="form-control" formControlName="dateGo">
+    <div class="text-danger" *ngIf="editForm.get('dateGo')?.invalid && editForm.get('dateGo')?.untouched">
+      Date Go invalid
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Date Out</label>
+    <input type="date" class="form-control" formControlName="dateOut">
+    <div class="text-danger" *ngIf="editForm.get('dateOut')?.invalid && editForm.get('dateOut')?.untouched">
+      Date Go invalid
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Reason Go</label>
+    <input type="text" class="form-control" formControlName="reasonGo">
+    <div class="text-danger" *ngIf="editForm.get('reasonGo')?.invalid && editForm.get('reasonGo')?.untouched">
+      Reason Go invalid
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Method Doctor</label>
+    <input type="text" class="form-control" formControlName="methodDoctor">
+    <div class="text-danger" *ngIf="editForm.get('methodDoctor')?.invalid && editForm.get('methodDoctor')?.untouched">
+      Method Doctor invalid
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Name Doctor</label>
+    <input type="text" class="form-control" formControlName="doctor">
+    <div class="text-danger" *ngIf="editForm.get('doctor')?.invalid && editForm.get('doctor')?.untouched">
+      Name Doctor invalid
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit" value="Update" [disabled]="editForm.invalid">Update</button>
+    <button class="btn btn-primary" type="submit" (click)="xacNhan()">Back</button>
+  </div>
+</form>

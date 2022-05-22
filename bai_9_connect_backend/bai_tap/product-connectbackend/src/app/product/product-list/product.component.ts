@@ -4,6 +4,7 @@ import {ProductService} from "../../service/product.service";
 import {Router} from "@angular/router";
 import {CategoryService} from "../../service/category.service";
 import {Category} from "../../model/Category";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-product',
@@ -13,6 +14,8 @@ import {Category} from "../../model/Category";
 export class ProductComponent implements OnInit {
   products: Product[];
   categories: Category[] = [];
+  searchForm: FormGroup;
+  x = 1;
 
   constructor(private productService: ProductService,
               private router: Router,
@@ -20,26 +23,44 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productService.getAllProduct().subscribe((value => {
+    this.productService.getAllProduct(this.x).subscribe((value => {
         this.products = value;
       }),
       () => {
       },
       () => {
-      })
+      });
+    this.searchForm = new FormGroup({
+      name: new FormControl()
+    });
   }
 
-  delete(id: number) {
-    this.productService.deleteProduct(id).subscribe();
+  search() {
+    this.productService.searchByName(this.searchForm.value.name).subscribe((data) => {
+      this.products = data;
+    }, () => {
+    }, () => {
+    })
+  }
+
+  delete(id: number, name: any) {
+    if (confirm("Are you sure delete " + name + '?')) {
+      this.productService.deleteProduct(id).subscribe(() => {
+      }, () => {
+      }, () => {
+        this.ngOnInit();
+      });
+    }
+
+  }
+  nextPage() {
+    this.x = this.x + 1;
+    console.log(this.x);
     this.ngOnInit();
   }
 
-  /*    this.getAllCate();*/
-  /*  getAllCate(){
-      this.categoryService.getAllCategory().subscribe(
-        (category) =>{
-          this.categories = category;
-        }
-      )
-    }*/
+  backPage() {
+    this.x = this.x - 1;
+    this.ngOnInit();
+  }
 }

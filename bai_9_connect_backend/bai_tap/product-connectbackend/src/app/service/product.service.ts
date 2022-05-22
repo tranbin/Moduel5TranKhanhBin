@@ -13,8 +13,8 @@ export class ProductService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllProduct(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(this.URL_API);
+  getAllProduct(x : number): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.URL_API + '?_page=' + x + '&_limit=3');
   }
 
   createProduct(product: Product): Observable<any> {
@@ -28,7 +28,12 @@ export class ProductService {
   findProductById(id: number): Observable<Product> {
     return this.httpClient.get<Product>(this.URL_API + '/' + id);
   }
-  deleteProduct(id : number){
-    return this.httpClient.delete(this.URL_API + '/' + id);
+
+  deleteProduct(id: number): Observable<void> {
+    return this.httpClient.delete<void>(this.URL_API + '/' + id);
+  }
+
+  searchByName(name: string): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(this.URL_API + '?' + 'name_like=' + name);
   }
 }

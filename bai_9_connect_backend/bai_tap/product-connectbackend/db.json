@@ -1,25 +1,39 @@
 {
   "products": [
     {
-      "id": 2,
-      "name": "Quần jean 2002",
-      "price": 400000,
-      "description": "Quảng châu",
-      "category": "2"
+      "name": "Bin",
+      "price": 1,
+      "description": "2",
+      "category": "Kids",
+      "id": 2
     },
     {
-      "name": "Áo sơ mi 2001",
-      "price": 2000000,
-      "description": "viet nam",
-      "category": "1",
+      "name": "bin",
+      "price": 1111,
+      "description": "111",
+      "category": "Quần",
       "id": 3
     },
     {
-      "name": "Bin",
-      "price": 20000,
-      "description": "2",
-      "category": "3",
-      "id": 4
+      "name": "Huyen",
+      "price": 1,
+      "description": "1",
+      "category": "Quần",
+      "id": 5
+    },
+    {
+      "name": "A",
+      "price": 1,
+      "description": "1",
+      "category": "Quần",
+      "id": 6
+    },
+    {
+      "name": "b",
+      "price": 1,
+      "description": "1",
+      "category": "Áo",
+      "id": 7
     }
   ],
   "categories": [

@@ -1,0 +1,35 @@
+<h1 style="text-align: center;color: pink">List Patient</h1>
+<table class="table table-hover table-striped">
+  <thead>
+  <tr>
+    <th>No</th>
+    <th>Id Project</th>
+    <th>Id Patient</th>
+    <th>Name Patient</th>
+    <th>Date Go</th>
+    <th>Date Out</th>
+    <th>Reason Go</th>
+    <th>Doctor Methor</th>
+    <th>Name Doctor</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let temp of patients ; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{temp.idProduct}}</td>
+    <td>{{temp.idPatient}}</td>
+    <td>{{temp.namePatient}}</td>
+    <td>{{temp.dateGo | date:'dd-MM-yyyy'}}</td>
+    <td>{{temp.dateOut| date:'dd-MM-yyyy'}}</td>
+    <td>{{temp.reasonGo}}</td>
+    <td>{{temp.methodDoctor}}</td>
+    <td>{{temp.doctor}}</td>
+    <td>
+      <a class="btn btn-warning m-2" [routerLink]="['/edit',temp.id]">Edit</a>
+      <a class="btn btn-danger m-2" (click)="deleteProduct(temp.id)">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,37 @@
+{
+  "patients": [
+    {
+      "id": 2,
+      "idProduct": "2",
+      "idPatient": "2",
+      "namePatient": "cccccc",
+      "dateGo": "2016-08-11",
+      "dateOut": "2019-08-11",
+      "reasonGo": "Ung thư",
+      "methodDoctor": "Mổ",
+      "doctor": "Lê Văn B"
+    },
+    {
+      "id": 3,
+      "idProduct": "3",
+      "idPatient": "3",
+      "namePatient": "ccccccaa",
+      "dateGo": "2016-08-11",
+      "dateOut": "2019-08-11",
+      "reasonGo": "Ung thư",
+      "methodDoctor": "Mổ",
+      "doctor": "Lê Văn B"
+    },
+    {
+      "id": 4,
+      "idProduct": "2",
+      "idPatient": "2",
+      "namePatient": "ccccccaaaaaa",
+      "dateGo": "2016-08-11",
+      "dateOut": "2019-08-11",
+      "reasonGo": "Ung thư",
+      "methodDoctor": "Mổ",
+      "doctor": "Lê Văn B"
+    }
+  ]
+}
